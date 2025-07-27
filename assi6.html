@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>function createCounter() {
+  // Private variable - cannot be accessed outside
+  let count = 0;
+
+  return {
+    // Method to increment count
+    increment: function () {
+      count += 1;
+      return count;
+    },
+
+    // Method to get current count
+    getCount: function () {
+      return count;
+    }
+  };
+}
+
+// ----------- Testing -----------
+
+const counter = createCounter();
+
+console.log(counter.increment()); // Output: 1
+console.log(counter.increment()); // Output: 2
+console.log(counter.getCount());  // Output: 2
+
+// Trying to access count directly will fail
+console.log(counter.count); // Output: undefined
+</script>
